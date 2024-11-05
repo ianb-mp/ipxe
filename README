@@ -6,3 +6,18 @@ Quick start guide:
    make
 
 For any more detailed instructions, see http://ipxe.org
+
+
+# Docker build
+
+Build the image:
+```
+podman build -t ipxe .
+```
+
+Run the container, mounting src into /data
+```
+docker run -it --rm -v $(pwd):/data ipxe
+```
+
+The resulting ipxe EFI binary is under `./bin-x86_64-efi`. Copy that to where you need it.
